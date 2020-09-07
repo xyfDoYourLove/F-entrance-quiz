@@ -1,0 +1,23 @@
+.trainee-panel {
+  background-color: #f7f7f7;
+}
+
+.trainee-list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.trainee-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 5%;
+  background-color: #eeeeee;
+  height: 30px;
+  width: 70px;
+  margin: 10px;
+}
