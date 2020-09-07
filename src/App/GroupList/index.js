@@ -9,7 +9,7 @@ class GroupList extends React.Component {
     super(props)
     this.state = {
       groupList: [],
-      isEditGroupName: false
+      isEditGroupName: [false, false, false, false, false, false]
     }
   }
 
@@ -31,10 +31,10 @@ class GroupList extends React.Component {
       })
   }
 
-  handleEditGroupNameShow = (e) => {
-    console.log(e.target.value);
+  handleEditGroupNameShow = (index) => {
+    this.state.isEditGroupName.splice(index, 1, !this.state.isEditGroupName[index])
     this.setState({
-      isEditGroupName: !this.state.isEditGroupName,
+      isEditGroupName: this.state.isEditGroupName,
     })
   }
 
@@ -66,14 +66,14 @@ class GroupList extends React.Component {
       </div>
       <figure>
 
-        {this.state.groupList.map((item) => {
+        {this.state.groupList.map((item, index) => {
           return (<div key={item.name}>
-            {this.state.isEditGroupName ?
+            {this.state.isEditGroupName[index] ?
               (<li>
                 <input type='text' onKeyDown={this.handleAddTrainee} />
               </li>) :
               (<li>
-                <figure onClick={this.handleEditGroupNameShow}>
+                <figure onClick={() => this.handleEditGroupNameShow(index)}>
                   {item.name}
                 </figure>
               </li>)
