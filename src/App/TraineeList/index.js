@@ -88,7 +88,6 @@ class TraineeList extends React.Component {
               + 添加学员
             </figure>
           </li>)
-         
           }
         </ul>
       </div>
